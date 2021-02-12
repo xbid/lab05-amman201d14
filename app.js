@@ -117,7 +117,7 @@ function multiplyArray(multArr) {
 let multiply3 = multiply(testArray[0], testArray[1]);
 
 let multiply4 = multiply(multiply3[0], testArray[2]);
-console.log(multiply4);
+// console.log(multiply4);
 return [multiply4[0], `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${multiply4[0]}.`];
 
 }
@@ -148,9 +148,23 @@ let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
+  let questionSixArray = [];
+  let numberOfElements = dynamicArray.length;
+  let product;
+  let value = dynamicArray[0];
+  for (let index = 1; index < numberOfElements + 1; index++) {
+      product = multiply(value, index);
+      value = product[0];
+      // console.log(`value is ${value}`);
+  }
+  questionSixArray[0] = value;
+  dynamicArray = dynamicArray.join(',');
+  questionSixArray[1] = (`The numbers ${dynamicArray} have a product of ${value}.`)
+  return questionSixArray;
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
