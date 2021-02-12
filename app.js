@@ -89,7 +89,7 @@ function sumArray(sumArr) {
   let thirdProccess = sum(testArray[0], testArray[1]);
 
   let fourthProccess = sum(thirdProccess[0], testArray[2]);
-  console.log(fourthProccess);
+  // console.log(fourthProccess);
   return [fourthProccess[0], `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${fourthProccess[0]} is their sum.`]
   
   //eslint-disable-line
@@ -114,10 +114,16 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   //eslint-disable-line
+let multiply3 = multiply(testArray[0], testArray[1]);
+
+let multiply4 = multiply(multiply3[0], testArray[2]);
+console.log(multiply4);
+return [multiply4[0], `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${multiply4[0]}.`];
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
